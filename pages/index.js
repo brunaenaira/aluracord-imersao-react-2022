@@ -69,7 +69,7 @@ export default function PaginaInicial() {
         styleSheet={{
           display: 'flex', alignItems: 'center', justifyContent: 'center',
           backgroundColor: appConfig.theme.colors.primary[500],
-          backgroundImage: 'url(https://virtualbackgrounds.site/wp-content/uploads/2020/07/the-lord-of-the-rings-hobbit-house-entrance.jpg)',
+          backgroundImage: 'url(https://www.highfieldbaptist.org/wp-content/uploads/2018/01/open-bible-with-beautiful-sunset_rmXx3Wyfe0.jpg)',
           backgroundRepeat: 'no-repeat', backgroundSize: 'cover', backgroundBlendMode: 'multiply',
         }}
       >
@@ -96,8 +96,9 @@ export default function PaginaInicial() {
               width: { xs: '100%', sm: '50%' }, textAlign: 'center', marginBottom: '32px',
             }}
           >
-            <Titulo tag="h2">Welcome!</Titulo>
-            <Text variant="body3" styleSheet={{ marginBottom: '32px', color: appConfig.theme.colors.neutrals[300] }}>
+            <Titulo tag="h2">Welcome to the Kingdom!</Titulo>
+            {/* embaixo do welcome */}
+            <Text variant="body3" styleSheet={{ marginBottom: '32px', color: appConfig.theme.colors.neutrals[400] }}>
               {appConfig.name}
             </Text>
 
@@ -105,10 +106,10 @@ export default function PaginaInicial() {
               fullWidth
               textFieldColors={{
                 neutral: {
-                  textColor: appConfig.theme.colors.neutrals[200],
-                  mainColor: appConfig.theme.colors.neutrals[900],
-                  mainColorHighlight: appConfig.theme.colors.primary[500],
-                  backgroundColor: appConfig.theme.colors.neutrals[800],
+                  textColor: appConfig.theme.colors.neutrals[100],
+                  mainColor: appConfig.theme.colors.neutrals[200],
+                  mainColorHighlight: appConfig.theme.colors.primary[100],
+                  backgroundColor: appConfig.theme.colors.neutrals[200],
                 },
               }}
             />
@@ -117,9 +118,9 @@ export default function PaginaInicial() {
               label='Entrar'
               fullWidth
               buttonColors={{
-                contrastColor: appConfig.theme.colors.neutrals["300"],
+                contrastColor: appConfig.theme.colors.neutrals["100"],
                 mainColor: appConfig.theme.colors.primary[500],
-                mainColorLight: appConfig.theme.colors.primary[400],
+                mainColorLight: appConfig.theme.colors.primary[100],
                 mainColorStrong: appConfig.theme.colors.primary[600],
               }}
             />
@@ -145,14 +146,14 @@ export default function PaginaInicial() {
           >
             <Image
               styleSheet={{
-                marginBottom: '16px',
+                marginBottom: '20px',
               }}
               src={`https://github.com/${username}.png`}
             />
             <Text
               variant="body4"
               styleSheet={{
-                color: appConfig.theme.colors.neutrals[200],
+                color: appConfig.theme.colors.neutrals[100],
                 backgroundColor: appConfig.theme.colors.neutrals[900],
                 padding: '3px 10px',
                 borderRadius: '1000px'
