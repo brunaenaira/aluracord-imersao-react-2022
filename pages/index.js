@@ -1,4 +1,7 @@
 import { Box, Button, Text, TextField, Image } from '@skynexui/components';
+import React from 'react';
+//hook gancho de roteamento sempre use
+import { useRouter } from 'next/router';
 import appConfig from '../config.json';
 
 function GlobalStyle() {
@@ -60,7 +63,8 @@ function Titulo(props) {
 // export default HomePage
 
 export default function PaginaInicial() {
-  const username = 'brunaenaira';
+  //const username = 'brunaenaira'; função que pega o que foi definido username e muda o valor com setUsername
+  const [username, setUsername] = React.useState('brunaenaira');
 
   return (
     <>
@@ -91,6 +95,11 @@ export default function PaginaInicial() {
           {/* Formulário */}
           <Box
             as="form"
+            onSubimit= {function(infosDoEvento){
+              infosDoEvento.preventDefault();
+              console.log('Alguém submeteu o fora');
+
+            }}
             styleSheet={{
               display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
               width: { xs: '100%', sm: '50%' }, textAlign: 'center', marginBottom: '32px',
@@ -101,8 +110,33 @@ export default function PaginaInicial() {
             <Text variant="body3" styleSheet={{ marginBottom: '32px', color: appConfig.theme.colors.neutrals[400] }}>
               {appConfig.name}
             </Text>
+            
+            {/*<input
+              type="text"
+              valor inicial para um campo, value no input não funciona
+              value={"username"}
+              é uma função para o React saber o que tem que fazer
+              onChange={function (event){
+                console.log('usuario digitou',event.target.value);
+                //onde ta o valor?
+                const valor = event.target.value;
+                //trocar o valor da variavel
+                //através do React e avise quem precisa mudar use Set
+                setUsername(valor);
+              }}
+
+            /> */}
 
             <TextField
+               value={username}
+               onChange={function (event) {
+                 console.log('usuario digitou', event.target.value);
+                 // Onde ta o valor?
+                 const valor = event.target.value;
+                 // Trocar o valor da variavel
+                 // através do React o set avisa quem precisa mudar
+                 setUsername(valor);
+               }}
               fullWidth
               textFieldColors={{
                 neutral: {
